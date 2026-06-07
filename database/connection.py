@@ -1,37 +1,36 @@
-# database/connection.py
-import os
 import streamlit as st
 from pymongo import MongoClient
-from pymongo.errors import ConnectionFailure
+from pymongo.errors import ConnectionFailure, ConfigurationError
 
-def get_database():
-    """Get MongoDB database connection using Streamlit secrets or env variable."""
+@st.cache_resource
+def get_client():
     try:
-        # Try Streamlit secrets first (for deployment)
-        mongo_uri = st.secrets.get("MONGO_URI", None)
-    except Exception:
-        mongo_uri = None
-
-    if not mongo_uri:
-        # Fallback to environment variable
-        mongo_uri = os.getenv("MONGO_URI", "mongodb://localhost:27017/")
-
-    try:
-        client = MongoClient(mongo_uri, serverSelectionTimeoutMS=5000)
-        client.admin.command("ping")  # Validate connection
-        db = client["manali_trip"]
-        return db
-    except ConnectionFailure as e:
-        st.error(f"❌ MongoDB Connection Failed: {e}")
+        uri = st.secrets["mongodb"]["uri"]
+        client = MongoClient(uri, serverSelectionTimeoutMS=5000)
+        client.admin.command("ping")
+        return client
+    except KeyError:
+        st.error("❌ MongoDB URI secrets mein nahi mili. Secrets configure karein.")
         return None
-    except Exception as e:
-        st.error(f"❌ Database Error: {e}")
+    except (ConnectionFailure, ConfigurationError) as e:
+        st.error(f"❌ MongoDB connection failed: {e}")
+        return None
+
+
+def get_db():
+    try:
+        db_name = st.secrets["mongodb"]["database"]
+        client = get_client()
+        if client:
+            return client[db_name]
+        return None
+    except KeyError:
+        st.error("❌ Database name secrets mein nahi mila.")
         return None
 
 
 def get_collection(collection_name: str):
-    """Get a specific collection from the database."""
-    db = get_database()
+    db = get_db()
     if db is not None:
         return db[collection_name]
     return None

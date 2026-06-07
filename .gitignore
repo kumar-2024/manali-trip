@@ -1,1 +1,25 @@
+# ⚠️ MOST IMPORTANT — credentials safe rakhne ke liye
+.streamlit/secrets.toml
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyc
+.pytest_cache/
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Environment files
 .env
+*.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
