@@ -45,14 +45,12 @@ st.markdown(f"""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap');
 
-/* Hide header, deploy button */
 header[data-testid="stHeader"],
 .stDeployButton,
 div[data-testid="stStatusWidget"] {{
     display: none !important;
 }}
 
-/* TOP GAP ZERO */
 .stMainBlockContainer,
 div[data-testid="stMainBlockContainer"] {{
     padding-top: 0rem !important;
@@ -76,7 +74,6 @@ section.main > div {{
     --dusk: #0D1B2A;
 }}
 
-/* ── BACKGROUND IMAGE ── */
 .stApp {{
     background-image: url('{bg_image_url}');
     background-size: cover;
@@ -101,7 +98,6 @@ h1, h2, h3 {{
     text-shadow: 0 2px 10px rgba(0,0,0,0.8);
 }}
 
-/* Metric cards — thoda transparent */
 div[data-testid="metric-container"] {{
     background: rgba(13,27,42,0.45);
     border: 1px solid rgba(201,216,240,0.25);
@@ -238,7 +234,6 @@ box-shadow: 0 8px 25px rgba(0,0,0,0.25);
 
 
 # ── Trip Organizers ───────────────────────────────────────────────────────────
-# ── Trip Organizers ───────────────────────────────────────────────────────────
 img1 = img_to_base64("images/profile anima.jpeg")
 img2 = img_to_base64("images/profile kishan.jpeg")
 
@@ -259,7 +254,7 @@ organizers_html = f"""
     background: rgba(13,27,42,0.38);
     border: 1px solid rgba(201,216,240,0.2);
     border-radius: 16px;
-    padding: 24px 30px 32px;
+    padding: 24px 20px 32px;
     backdrop-filter: blur(10px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.2);
   }}
@@ -272,35 +267,47 @@ organizers_html = f"""
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 24px;
   }}
   .card {{
     flex: 1;
-    min-width: 220px;
-    max-width: 320px;
+    min-width: 0;
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 20px;
-    padding: 24px 20px;
+    padding: 24px 16px;
     text-align: center;
     color: #C9D8F0;
     backdrop-filter: blur(6px);
   }}
-  .card h3 {{ color:#F0F4FF; margin:14px 0 10px; font-size:17px; text-shadow:0 1px 4px rgba(0,0,0,0.5); }}
-  .card p {{ line-height:2.1; font-size:13.5px; margin:0; }}
+  .card h3 {{ color:#F0F4FF; margin:14px 0 10px; font-size:16px; text-shadow:0 1px 4px rgba(0,0,0,0.5); }}
+  .card p {{ line-height:2; font-size:13px; margin:0; word-break:break-word; }}
 
-  /* Mobile: 480px se chhota ho to column */
-  @media (max-width: 480px) {{
-    .cards {{ flex-direction: column; align-items: center; gap: 16px; }}
-    .card {{ min-width: unset; width: 100%; max-width: 100%; }}
-  }}
+  .mobile-only {{ display: none; }}
+  .desktop-only {{ display: flex; }}
 </style>
 </head>
 <body>
 <div class="wrapper">
   <h2>👥 Trip Organizers</h2>
-  <div class="cards">
+
+  <!-- Desktop: side by side -->
+  <div class="cards desktop-only" id="cards-desktop">
+    <div class="card">
+      {make_img_tag(img1)}
+      <h3>Anima Tirkey</h3>
+      <p>📞 Call: 7485 841562<br>💬 WhatsApp: 7485 841562<br>📧 animatirkey306@gmail.com</p>
+    </div>
+    <div class="card">
+      {make_img_tag(img2)}
+      <h3>Kishan Kumar</h3>
+      <p>📞 Call: 969 324 0618<br>💬 WhatsApp: 7050 311718<br>📧 KumarKrishna70503@gmail.com</p>
+    </div>
+  </div>
+
+  <!-- Mobile: upar neeche -->
+  <div class="mobile-only" id="cards-mobile" style="flex-direction:column; gap:16px;">
     <div class="card">
       {make_img_tag(img1)}
       <h3>Anima Tirkey</h3>
@@ -313,11 +320,31 @@ organizers_html = f"""
     </div>
   </div>
 </div>
+
+<script>
+  function setLayout() {{
+    var w = document.body.offsetWidth;
+    var desktop = document.getElementById('cards-desktop');
+    var mobile  = document.getElementById('cards-mobile');
+    if (w < 520) {{
+      desktop.style.display = 'none';
+      mobile.style.display  = 'flex';
+      document.body.parentElement.style.height = '820px';
+    }} else {{
+      desktop.style.display = 'flex';
+      mobile.style.display  = 'none';
+      document.body.parentElement.style.height = '420px';
+    }}
+  }}
+  setLayout();
+  window.addEventListener('resize', setLayout);
+</script>
 </body>
 </html>
 """
 
 components.html(organizers_html, height=420, scrolling=False)
+
 
 # ── Quick Stats ───────────────────────────────────────────────────────────────
 c1, c2, c3, c4 = st.columns(4)
