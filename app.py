@@ -238,42 +238,63 @@ box-shadow: 0 8px 25px rgba(0,0,0,0.25);
 
 
 # ── Trip Organizers ───────────────────────────────────────────────────────────
+# ── Trip Organizers ───────────────────────────────────────────────────────────
 img1 = img_to_base64("images/profile anima.jpeg")
 img2 = img_to_base64("images/profile kishan.jpeg")
 
 def make_img_tag(b64):
     if b64:
-        return f'<img src="data:image/jpeg;base64,{b64}" style="width:180px;height:180px;border-radius:50%;object-fit:cover;border:4px solid #E9A84C;display:block;margin:0 auto;">'
-    return '<div style="width:180px;height:180px;border-radius:50%;background:rgba(27,58,92,0.5);border:4px solid #E9A84C;margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:60px;">👤</div>'
+        return f'<img src="data:image/jpeg;base64,{b64}" style="width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid #E9A84C;display:block;margin:0 auto;">'
+    return '<div style="width:150px;height:150px;border-radius:50%;background:rgba(27,58,92,0.5);border:4px solid #E9A84C;margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:55px;">👤</div>'
 
 organizers_html = f"""
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+  * {{ box-sizing: border-box; }}
   body {{ margin:0; padding:0; font-family:'DM Sans','Segoe UI',sans-serif; background:transparent; }}
   .wrapper {{
     background: rgba(13,27,42,0.38);
     border: 1px solid rgba(201,216,240,0.2);
     border-radius: 16px;
-    padding: 24px 40px 40px;
+    padding: 24px 30px 32px;
     backdrop-filter: blur(10px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.2);
   }}
-  h2 {{ text-align:center; color:#F0F4FF; font-size:24px; margin-bottom:28px; font-family:Georgia,serif; text-shadow:0 2px 6px rgba(0,0,0,0.6); }}
-  .cards {{ display:flex; justify-content:center; gap:40px; flex-wrap:wrap; }}
+  h2 {{
+    text-align:center; color:#F0F4FF; font-size:22px;
+    margin:0 0 24px 0; font-family:Georgia,serif;
+    text-shadow:0 2px 6px rgba(0,0,0,0.6);
+  }}
+  .cards {{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }}
   .card {{
-    width:300px;
+    flex: 1;
+    min-width: 220px;
+    max-width: 320px;
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 20px;
-    padding: 25px;
+    padding: 24px 20px;
     text-align: center;
     color: #C9D8F0;
     backdrop-filter: blur(6px);
   }}
-  .card h3 {{ color:#F0F4FF; margin:15px 0 10px; font-size:18px; text-shadow:0 1px 4px rgba(0,0,0,0.5); }}
-  .card p {{ line-height:2; font-size:14px; margin:0; }}
+  .card h3 {{ color:#F0F4FF; margin:14px 0 10px; font-size:17px; text-shadow:0 1px 4px rgba(0,0,0,0.5); }}
+  .card p {{ line-height:2.1; font-size:13.5px; margin:0; }}
+
+  /* Mobile: 480px se chhota ho to column */
+  @media (max-width: 480px) {{
+    .cards {{ flex-direction: column; align-items: center; gap: 16px; }}
+    .card {{ min-width: unset; width: 100%; max-width: 100%; }}
+  }}
 </style>
 </head>
 <body>
@@ -296,9 +317,7 @@ organizers_html = f"""
 </html>
 """
 
-components.html(organizers_html, height=520, scrolling=False)
-st.markdown("<div style='margin-top:10px;'></div>", unsafe_allow_html=True)
-
+components.html(organizers_html, height=420, scrolling=False)
 
 # ── Quick Stats ───────────────────────────────────────────────────────────────
 c1, c2, c3, c4 = st.columns(4)
