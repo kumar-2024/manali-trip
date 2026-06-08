@@ -234,7 +234,6 @@ box-shadow: 0 8px 25px rgba(0,0,0,0.25);
 
 
 # ── Trip Organizers ───────────────────────────────────────────────────────────
-
 img1 = img_to_base64("images/profile anima.jpeg")
 img2 = img_to_base64("images/profile kishan.jpeg")
 
@@ -260,8 +259,11 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# --- Anima Tirkey ---
-st.markdown(f"""
+# --- Dono profiles columns me ---
+col1, col2 = st.columns(2)
+
+with col1:
+    st.markdown(f"""
 <div style="
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.12);
@@ -270,7 +272,6 @@ st.markdown(f"""
   text-align: center;
   color: #C9D8F0;
   backdrop-filter: blur(6px);
-  margin-bottom: 12px;
 ">
   {make_img_tag(img1)}
   <h3 style="color:#F0F4FF; margin:14px 0 10px; font-size:18px; text-shadow:0 1px 4px rgba(0,0,0,0.5);">Anima Tirkey</h3>
@@ -282,8 +283,8 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-# --- Kishan Kumar ---
-st.markdown(f"""
+with col2:
+    st.markdown(f"""
 <div style="
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.12);
@@ -292,7 +293,6 @@ st.markdown(f"""
   text-align: center;
   color: #C9D8F0;
   backdrop-filter: blur(6px);
-  margin-bottom: 20px;
 ">
   {make_img_tag(img2)}
   <h3 style="color:#F0F4FF; margin:14px 0 10px; font-size:18px; text-shadow:0 1px 4px rgba(0,0,0,0.5);">Kishan Kumar</h3>
@@ -303,6 +303,8 @@ st.markdown(f"""
   </p>
 </div>
 """, unsafe_allow_html=True)
+
+st.markdown("<div style='margin-bottom:20px;'></div>", unsafe_allow_html=True)
 
 # ── Quick Stats ───────────────────────────────────────────────────────────────
 c1, c2, c3, c4 = st.columns(4)
