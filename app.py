@@ -187,47 +187,45 @@ box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 
 
 # ── Hero Banner ───────────────────────────────────────────────────────────────
-st.markdown("""
+_hero_b64 = img_to_base64("images/poster.png")
+_hero_style = (
+    f"background-image: url('data:image/png;base64,{_hero_b64}'); background-size: 100% 100%; background-repeat: no-repeat;"
+    if _hero_b64
+    else "background: rgba(0,0,0,);"
+)
+
+st.markdown(f"""
 <div style="
-background: rgba(13,27,42,0.40);
-border: 1px solid rgba(201,216,240,0.2);
+{_hero_style}
 border-radius: 20px;
-padding: 23px 30px;
+padding: 40px 36px;
 margin-bottom: 30px;
 margin-top: 0px;
 position: relative;
 overflow: hidden;
-backdrop-filter: blur(10px);
-box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+box-shadow: 0 8px 25px rgba(0,0,0,0.0);
+min-height: 400px;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
 ">
-  <div style="position:absolute;top:-40px;right:-40px;width:200px;height:200px;
-    background:radial-gradient(circle,rgba(233,168,76,0.12),transparent 70%);border-radius:50%;"></div>
-  <div style="position:absolute;bottom:-60px;left:-30px;width:250px;height:250px;
-    background:radial-gradient(circle,rgba(45,106,159,0.15),transparent 70%);border-radius:50%;"></div>
-
-  <p style="color:#E9A84C;letter-spacing:4px;font-size:12px;text-transform:uppercase;margin-bottom:8px;text-shadow:0 1px 4px rgba(0,0,0,0.6);">
-    ✈️ Ranchi → Manali → Ranchi
-  </p>
-  <h1 style="font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,60px);
-    font-weight:900;color:#F0F4FF;line-height:1.1;margin-bottom:16px;text-shadow:0 2px 8px rgba(0,0,0,0.7);">
-    Manali Trip 2026 🏔️
-  </h1>
-  <p style="color:#C9D8F0;font-size:18px;font-weight:300;max-width:600px;margin-bottom:24px;text-shadow:0 1px 4px rgba(0,0,0,0.5);">
-    28 September 2026 → 5 October 2026 &nbsp;•&nbsp; 8 Days &nbsp;•&nbsp; Paragliding · Rafting · Snow · Rohtang
-  </p>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;">
-    <span style="background:rgba(233,168,76,0.18);border:1px solid rgba(233,168,76,0.45);
-      color:#E9A84C;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:500;">
-      🗓 8 Days · 7 Nights
-    </span>
-    <span style="background:rgba(45,106,159,0.18);border:1px solid rgba(45,106,159,0.5);
-      color:#C9D8F0;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:500;">
-      💰 ₹22,000–₹26,000 / head
-    </span>
-    <span style="background:rgba(27,67,50,0.35);border:1px solid rgba(27,67,50,0.7);
-      color:#6EE7B7;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:500;">
-      🌡 October · Clear Views
-    </span>
+  <p style="color:#FF0000; letter-spacing:4px; font-size:12px; text-transform:uppercase; margin-bottom:8px; font-weight:700;">
+  ✈️ Ranchi → Manali → Ranchi
+</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <span style="background:rgba(23,16,76,1);border:1px solid rgba(233,168,76,0.55);
+        color:#E9A84C;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:500;">
+        🗓 8 Days · 7 Nights
+      </span>
+      <span style="background:rgba(45,106,159,1);border:1px solid rgba(45,106,159,0.6);
+        color:#C9D8F0;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:500;">
+        💰 ₹22,000–₹26,000 / head
+      </span>
+      <span style="background:rgba(27,67,50,1);border:1px solid rgba(27,67,50,0.8);
+        color:#6EE7B7;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:500;">
+        🌡 October · Clear Views
+      </span>
+    </div>
   </div>
 </div>
 """, unsafe_allow_html=True)
@@ -245,12 +243,12 @@ def make_img_tag(b64):
 # --- Heading ---
 st.markdown("""
 <div style="
-  background: rgba(13,27,42,0.38);
+  background: transparent;
   border: 1px solid rgba(201,216,240,0.2);
   border-radius: 16px;
   padding: 18px 20px;
   text-align: center;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(0px);
   margin-bottom: 12px;
 ">
   <h2 style="color:#F0F4FF; margin:0; font-family:Georgia,serif; font-size:22px; text-shadow:0 2px 6px rgba(0,0,0,0.6);">
@@ -265,7 +263,7 @@ col1, col2 = st.columns(2)
 with col1:
     st.markdown(f"""
 <div style="
-  background: rgba(255,255,255,0.06);
+  background: rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 20px;
   padding: 28px 20px;
@@ -286,7 +284,7 @@ with col1:
 with col2:
     st.markdown(f"""
 <div style="
-  background: rgba(255,255,255,0.06);
+  background: rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 20px;
   padding: 28px 20px;
