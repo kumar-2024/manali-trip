@@ -1,4 +1,3 @@
-# pages/7_👥_Member_List.py
 import streamlit as st
 import sys
 import os
@@ -41,6 +40,51 @@ div[data-testid="metric-container"] {
 div[data-testid="stForm"] { background-color: transparent !important; border: none !important; }
 </style>
 """, unsafe_allow_html=True)
+
+# ── Password Gate ───────────────────────────────────────────────────────────
+def check_password():
+    """Returns True only if the user has entered the correct password."""
+
+    def password_entered():
+        correct = st.secrets.get("member_list_password", None)
+        if correct is None:
+            st.session_state["password_correct"] = False
+            st.session_state["password_missing_config"] = True
+            return
+        if st.session_state["member_password_input"] == correct:
+            st.session_state["password_correct"] = True
+            # Don't keep the password sitting in session_state once verified
+            del st.session_state["member_password_input"]
+        else:
+            st.session_state["password_correct"] = False
+
+    if st.session_state.get("password_correct", False):
+        return True
+
+    st.title("🔒 Member List")
+    st.markdown("*This page is password protected. Please enter the access password.*")
+    st.text_input(
+        "Password",
+        type="password",
+        key="member_password_input",
+        on_change=password_entered,
+    )
+
+    if st.session_state.get("password_missing_config"):
+        st.error(
+            "❌ No password configured. Add `member_list_password` to your "
+            "`.streamlit/secrets.toml` file."
+        )
+    elif "password_correct" in st.session_state:
+        st.error("❌ Incorrect password. Please try again.")
+
+    return False
+
+
+if not check_password():
+    st.stop()
+
+# ── Everything below only runs after correct password ──────────────────────
 
 st.title("👥 Member List")
 st.markdown("*Everyone registered for the Manali trip 2026*")
