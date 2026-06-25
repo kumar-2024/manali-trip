@@ -166,25 +166,21 @@ for post in posts:
     mime = post.get("mime", "image/jpeg")
     posted_at = post.get("posted_at", "")
 
-    st.markdown(f"""
-<div style="background:rgba(201,216,240,0.06);border:1px solid rgba(201,216,240,0.15);
-  border-radius:14px;padding:16px;margin-bottom:20px;">
-""", unsafe_allow_html=True)
+    with st.container(border=True):
+        if media_type == "video":
+            st.video(f"data:{mime};base64,{media_data}")
+        else:
+            st.markdown(
+                f'<img src="data:{mime};base64,{media_data}" '
+                f'style="width:100%;border-radius:10px;display:block;">',
+                unsafe_allow_html=True,
+            )
 
-    if media_type == "video":
-        st.video(f"data:{mime};base64,{media_data}")
-    else:
-        st.markdown(
-            f'<img src="data:{mime};base64,{media_data}" '
-            f'style="width:100%;max-width:500px;border-radius:10px;display:block;margin:0 auto;">',
-            unsafe_allow_html=True,
-        )
+        if caption:
+            st.markdown(f"<p style='margin-top:10px;color:#F0F4FF;font-size:15px;'>{caption}</p>", unsafe_allow_html=True)
+        st.caption(f"🕒 {posted_at}")
 
-    if caption:
-        st.markdown(f"<p style='margin-top:10px;color:#F0F4FF;font-size:15px;'>{caption}</p>", unsafe_allow_html=True)
-    st.caption(f"🕒 {posted_at}")
-
-    st.markdown("</div>", unsafe_allow_html=True)
+    st.markdown("<div style='margin-bottom:20px;'></div>", unsafe_allow_html=True)
 
 st.markdown("---")
 st.caption(f"📸 Posts · {len(posts)} shared · Manali Trip 2026")
