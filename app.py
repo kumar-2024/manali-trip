@@ -352,6 +352,7 @@ st.markdown("### 📖 Explore App Pages")
 pages_info = [
     ("⚠️ Important Notice",  "Registration rules, eligibility & guidelines", "Important_Notice"),
     ("📝 Registration Form",  "Register yourself for the trip",               "Registration_Form"),
+    ("📸 Posts",              "Photos & videos from the trip",               "Posts"),
     ("🏔️ About Manali",       "Destination guide, weather & packing tips",    "About_Manali"),
     ("🧗 Activities List",     "All activities & adventure options",          "Activities_List"),
     ("📆 Time Table",          "Full trip schedule at a glance",              "Time_Table"),
