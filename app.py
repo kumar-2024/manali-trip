@@ -299,14 +299,6 @@ with col_mid:
 """, unsafe_allow_html=True)
 
 st.markdown("<div style='margin-bottom:20px;'></div>", unsafe_allow_html=True)
-# ── Quick Stats ───────────────────────────────────────────────────────────────
-c1, c2, c3, c4 = st.columns(4)
-c1.metric("🚆 Train Days",   "2",  "Rajdhani Express")
-c2.metric("🚌 Bus Nights",   "2",  "Volvo Sleeper")
-c3.metric("🏔️ Manali Days", "6",  "Full experience")
-c4.metric("🎯 Activities",   "4+", "Adventure packed")
-
-st.markdown("---")
 
 
 # ── Route Overview ────────────────────────────────────────────────────────────
