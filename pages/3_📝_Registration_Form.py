@@ -84,7 +84,7 @@ st.markdown("""
 <div style="background:rgba(13,27,42,0.6);border:1px solid rgba(201,216,240,0.2);
   border-radius:10px;padding:14px 18px;margin-bottom:24px;backdrop-filter: blur(4px);">
   🏔️ <strong style="color:#E9A84C;">Manali Trip 2026</strong> &nbsp;|&nbsp;
-  📅 28 September → 5 October &nbsp;|&nbsp;
+  📅 1 october → 10 October &nbsp;|&nbsp;
   💰 ₹22,000 – ₹26,000 per head
 </div>
 """, unsafe_allow_html=True)
