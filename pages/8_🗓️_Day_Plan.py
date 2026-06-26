@@ -13,12 +13,12 @@ section[data-testid="stSidebar"] { background: linear-gradient(180deg, #0D1B2A 0
 """, unsafe_allow_html=True)
 
 st.title("🗓️ Day Plan")
-st.markdown("*Detailed breakdown of every day — 28 Sep to 5 Oct 2026*")
+st.markdown("*Detailed breakdown of every day — 1 Oct to 11 Oct 2026*")
 st.markdown("---")
 
 days = [
     {
-        "day": "Day 1 — 28 September (Monday)",
+        "day": "Day 1 — 1 October (Thursday)",
         "icon": "🚆",
         "title": "Ranchi → Delhi (Night Train — 12825)",
         "color": "#2D6A9F",
@@ -40,7 +40,7 @@ days = [
         ],
     },
     {
-        "day": "Day 2 — 29 September (Tuesday)",
+        "day": "Day 2 — 2 October (Friday)",
         "icon": "🚌",
         "title": "Delhi Transit + Night Bus to Manali",
         "color": "#2D6A9F",
@@ -66,7 +66,7 @@ days = [
         ],
     },
     {
-        "day": "Day 3 — 30 September (Wednesday)",
+        "day": "Day 3 — 3 October (Saturday)",
         "icon": "🏔️",
         "title": "Manali Arrival + Light Day",
         "color": "#1B4332",
@@ -91,12 +91,12 @@ days = [
             ("💡 Tips", """
 - Don't overexert Day 1 — altitude acclimatization matters
 - Stay hydrated, avoid alcohol on arrival day
-- Book Rohtang Pass permit online today for Day 6
+- Book Rohtang Pass permit online today for upcoming days
 """),
         ],
     },
     {
-        "day": "Day 4 — 1 October (Thursday)",
+        "day": "Day 4 — 4 October (Sunday)",
         "icon": "🪂",
         "title": "Adventure Day 1 — Solang Valley",
         "color": "#7C3AED",
@@ -127,7 +127,7 @@ days = [
         ],
     },
     {
-        "day": "Day 5 — 2 October (Friday)",
+        "day": "Day 5 — 5 October (Monday)",
         "icon": "🌊",
         "title": "Rafting + Trek Day",
         "color": "#0369A1",
@@ -162,7 +162,103 @@ days = [
         ],
     },
     {
-        "day": "Day 6 — 3 October (Saturday)",
+        "day": "Day 6 — 6 October (Tuesday)",
+        "icon": "🏕️",
+        "title": "Camping Day 1 — Head to the Campsite",
+        "color": "#B45309",
+        "badge": "🏕️ CAMPING",
+        "sections": [
+            ("📍 Location", "Riverside Camp near Solang / Old Manali (Beas riverbank)"),
+            ("🌤️ Afternoon — Check-in", """
+- **12:00 PM** — Check out hotel, transfer to campsite (most camps allow late hotel checkout coordination)
+- **1:30 PM** — Arrive at riverside camp, allot tents
+- Lunch at the camp (usually included in camping package)
+- Free time — riverside walk, photography
+"""),
+            ("🔥 Evening — Bonfire & Music", """
+- **6:30 PM** — Evening tea/snacks
+- **7:30 PM** — Bonfire setup begins
+- **8:30 PM** — Group bonfire — music, games, stories under the stars
+- **9:30 PM** — Camp dinner (BBQ / local Himachali thali, depending on package)
+"""),
+            ("💰 Estimated Costs", """
+| Item | Approx Cost |
+|------|------------|
+| Camping package (tent + meals) | ₹1,200–₹2,000/person/night |
+| Bonfire (often included) | — |
+| Bedding/sleeping bag rental | ₹200–₹300 (if needed) |
+"""),
+            ("💡 Tips", """
+- Book a riverside camp in advance — popular ones fill up fast in October
+- Carry warm clothes — nights near the river get cold (single digit °C)
+- Pack a torch/flashlight, campsites have limited lighting
+- Confirm whether meals are included in the camping package
+"""),
+        ],
+    },
+    {
+        "day": "Day 7 — 7 October (Wednesday)",
+        "icon": "🏕️",
+        "title": "Camping Day 2 — Stars, Stories & Sunrise",
+        "color": "#B45309",
+        "badge": "🏕️ CAMPING",
+        "sections": [
+            ("📍 Location", "Same riverside campsite"),
+            ("🌅 Early Morning", """
+- **6:00 AM** — Sunrise over the mountains — great photo opportunity
+- Hot tea/coffee by the riverside
+- Light morning walk along the riverbank
+"""),
+            ("🌤️ Day — Camp Activities", """
+- Breakfast at camp
+- Optional: nearby short nature trail or river-side games (volleyball, cards, etc.)
+- Relax, soak in the mountain silence — a true digital-detox day
+"""),
+            ("🌙 Evening", """
+- Second bonfire night — group games, antakshari, dancing
+- Dinner under the stars
+- **Check out of camp by next morning** (or late checkout if arranged)
+"""),
+            ("💡 Tips", """
+- Star-gazing is best between 9–11 PM if skies are clear
+- Carry a power bank — limited charging points at most camps
+- Respect campsite rules around bonfire/noise timing (usually until 10–11 PM)
+- Don't litter — most riverside camps are eco-sensitive zones
+"""),
+        ],
+    },
+    {
+        "day": "Day 8 — 8 October (Thursday)",
+        "icon": "🛍️",
+        "title": "Leisure Day + Shopping — Back to Manali",
+        "color": "#1A2D3A",
+        "badge": "🌤️ LEISURE",
+        "sections": [
+            ("📍 Location", "Manali Mall Road / Old Manali"),
+            ("🌅 Morning", """
+- Check out from campsite, transfer back to hotel/Manali town
+- Hotel check-in, freshen up
+- Relaxed breakfast/brunch at a Mall Road café
+"""),
+            ("🛍️ Afternoon — Shopping", """
+- **Mall Road & Old Manali shopping** — woolens, Kullu shawls, caps
+- Local handicrafts, dry fruits, Himachali pickles
+- Try local Tibetan/Israeli cafés in Old Manali (*Drifter's Café*, *Lazy Dog*)
+"""),
+            ("🌙 Evening", """
+- Pack bags for the return journey tomorrow
+- Final dinner in Manali — treat yourselves at a favourite spot
+- Early to bed — long travel day ahead
+"""),
+            ("💡 Tips", """
+- Bargain at local markets — prices are usually negotiable
+- Double-check all bags for left-behind items at hotel/camp
+- Keep return tickets (bus + train) printouts/screenshots handy
+"""),
+        ],
+    },
+    {
+        "day": "Day 9 — 9 October (Friday)",
         "icon": "🚌",
         "title": "Return — Manali → Delhi (HRTC Night Bus)",
         "color": "#92400E",
@@ -189,7 +285,7 @@ days = [
         ],
     },
     {
-        "day": "Day 7 — 4 October (Sunday)",
+        "day": "Day 10 — 10 October (Saturday)",
         "icon": "🚆",
         "title": "Delhi Transit + Night Train to Ranchi (12818)",
         "color": "#1B4332",
@@ -220,7 +316,7 @@ days = [
         ],
     },
     {
-        "day": "Day 8 — 5 October (Monday)",
+        "day": "Day 11 — 11 October (Sunday)",
         "icon": "🏠",
         "title": "Arrive Ranchi — Trip Complete!",
         "color": "#1B4332",
@@ -237,10 +333,10 @@ days = [
 - Share your Manali stories!
 """),
             ("💡 Summary", """
-- Total trip duration: **8 days** (28 Sep – 5 Oct 2026)
+- Total trip duration: **11 days** (1 Oct – 11 Oct 2026)
 - Total travel time (trains + buses): **~35 hours**
 - Total transport cost per person: **~₹3,500**
-- Manali stay: **3 nights** (30 Sep – 2 Oct)
+- Manali stay: **6 nights** (3 Oct – 8 Oct), including 2 nights camping
 """),
         ],
     },

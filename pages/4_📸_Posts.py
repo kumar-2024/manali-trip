@@ -63,7 +63,7 @@ div.stButton > button:hover { transform: translateY(-2px); box-shadow: 0 8px 24p
 """, unsafe_allow_html=True)
 
 # ── ⚙️ CONFIG: Change your Instagram link here ─────────────────────────────────
-INSTAGRAM_LINK = "https://www.instagram.com/ourtrip_2026"
+INSTAGRAM_LINK = "https://www.instagram.com/your_trip_page"
 
 MAX_UPLOAD_MB = 12  # safety margin under MongoDB's 16MB document limit
 
@@ -150,7 +150,7 @@ with st.expander("🔐 Admin: Upload a new post"):
 st.markdown("---")
 
 # ── Public feed (visible to everyone, no password needed) ──────────────────────
-posts = list(collection.find({}, {"_id": 0}).sort("posted_at", -1))
+posts = list(collection.find({}).sort("posted_at", -1))
 
 if not posts:
     st.info("😕 No posts yet. Check back soon!")
@@ -160,6 +160,7 @@ st.markdown(f"**{len(posts)} post(s)**")
 st.markdown("")
 
 for post in posts:
+    post_id = post.get("_id")
     caption = post.get("caption", "")
     media_data = post.get("media_data", "")
     media_type = post.get("media_type", "image")
@@ -179,6 +180,25 @@ for post in posts:
         if caption:
             st.markdown(f"<p style='margin-top:10px;color:#F0F4FF;font-size:15px;'>{caption}</p>", unsafe_allow_html=True)
         st.caption(f"🕒 {posted_at}")
+
+        # Admin-only delete control
+        if st.session_state.get("posts_admin_unlocked", False):
+            confirm_key = f"confirm_delete_{post_id}"
+            if st.session_state.get(confirm_key, False):
+                dc1, dc2 = st.columns(2)
+                with dc1:
+                    if st.button("✅ Confirm Delete", key=f"yes_{post_id}"):
+                        collection.delete_one({"_id": post_id})
+                        st.session_state[confirm_key] = False
+                        st.rerun()
+                with dc2:
+                    if st.button("✖️ Cancel", key=f"no_{post_id}"):
+                        st.session_state[confirm_key] = False
+                        st.rerun()
+            else:
+                if st.button("🗑️ Delete Post", key=f"del_{post_id}"):
+                    st.session_state[confirm_key] = True
+                    st.rerun()
 
     st.markdown("<div style='margin-bottom:20px;'></div>", unsafe_allow_html=True)
 

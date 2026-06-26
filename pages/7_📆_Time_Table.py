@@ -25,14 +25,14 @@ st.markdown("---")
 st.markdown("### 🗓️ Day Overview")
 
 data = [
-    ("Day 1", "28 Sep (Mon)", "🚆 Ranchi → Delhi", "Train 12825 dep 11:55 PM from RNC", "#1B3A5C"),
-    ("Day 2", "29 Sep (Tue)", "🏙️ Delhi Transit + Bus", "Arrive ANVT 7:35 PM · Bus dep 11:55 PM (KG ISBT)", "#1B3A5C"),
-    ("Day 3", "30 Sep (Wed)", "🏔️ Manali Arrival", "Arrive ~11:10 AM · Check-in · Mall Road · Rest", "#1B4332"),
-    ("Day 4", "1 Oct (Thu)",  "🎯 Manali Explore",  "Local sightseeing / adventure activities", "#2D3A1A"),
-    ("Day 5", "2 Oct (Fri)",  "🎯 Manali Explore",  "Rohtang / Solang / Rafting / Trekking", "#1A2D3A"),
-    ("Day 6", "3 Oct (Sat)",  "🚌 Manali → Delhi",  "HRTC Bus dep 7:00 PM from Manali", "#1B3A5C"),
-    ("Day 7", "4 Oct (Sun)",  "🏙️ Delhi Transit + Train", "Arrive KG ISBT ~8:30 AM · Train 12818 dep 8:45 PM (ANVT)", "#1B3A5C"),
-    ("Day 8", "5 Oct (Mon)",  "🚆 Delhi → Ranchi",  "Arrive Ranchi 3:40 PM", "#2A1A2A"),
+    ("Day 1", "1 Oct (Thu)",  "🚆 Ranchi → Delhi", "Train 12825 dep 11:55 PM from RNC", "#1B3A5C"),
+    ("Day 2", "2 Oct (Fri)",  "🏙️ Delhi Transit + Bus", "Arrive ANVT 7:35 PM · Bus dep 11:55 PM (KG ISBT)", "#1B3A5C"),
+    ("Day 3", "3 Oct (Sat)",  "🏔️ Manali Arrival", "Arrive ~11:10 AM · Check-in · Mall Road · Rest", "#1B4332"),
+    ("Day 4", "4 Oct (Sun)",  "🎯 Manali Explore",  "Local sightseeing / adventure activities", "#2D3A1A"),
+    ("Day 5", "5 Oct (Mon)",  "🎯 Manali Explore",  "Rohtang / Solang / Rafting / Trekking", "#1A2D3A"),
+    ("Day 6", "9 Oct (Fri)",  "🚌 Manali → Delhi",  "HRTC Bus dep 7:00 PM from Manali", "#1B3A5C"),
+    ("Day 7", "10 Oct (Sat)", "🏙️ Delhi Transit + Train", "Arrive KG ISBT ~8:30 AM · Train 12818 dep 8:45 PM (ANVT)", "#1B3A5C"),
+    ("Day 8", "11 Oct (Sun)", "🚆 Delhi → Ranchi",  "Arrive Ranchi 3:40 PM", "#2A1A2A"),
 ]
 
 html_rows = ""
@@ -67,8 +67,8 @@ with t1:
 **🟢 Onward Journey (जाने का सफर)**
 | Leg | Mode | Details |
 |-----|------|---------|
-| Ranchi → Delhi | Train 12825 | 28 Sep, dep 11:55 PM |
-| Delhi → Manali | Deltin Travels AC Bus | 29 Sep, dep 11:55 PM (KG/Majnu ka Tila) |
+| Ranchi → Delhi | Train 12825 | 1 Oct, dep 11:55 PM |
+| Delhi → Manali | Deltin Travels AC Bus | 2 Oct, dep 11:55 PM (KG/Majnu ka Tila) |
 
 ✅ Book train in advance (Tatkal if needed)  
 ✅ ISBT Kashmere Gate for Manali buses  
@@ -80,8 +80,8 @@ with t2:
 **🔴 Return Journey (वापसी का सफर)**
 | Leg | Mode | Details |
 |-----|------|---------|
-| Manali → Delhi | HRTC Ordinary Bus | 3 Oct, dep 7:00 PM |
-| Delhi → Ranchi | Train 12818 | 4 Oct, dep 8:45 PM (ANVT) |
+| Manali → Delhi | HRTC Ordinary Bus | 9 Oct, dep 7:00 PM |
+| Delhi → Ranchi | Train 12818 | 10 Oct, dep 8:45 PM (ANVT) |
 
 ✅ Arrive Delhi ~8:30 AM — ample time before train  
 ✅ Book Rajdhani/Express return well in advance  
@@ -98,8 +98,8 @@ with tr1:
     st.markdown("""
 **Jharkhand Sampark Kranti Express (12825)**  
 🛤️ Ranchi (RNC) → Anand Vihar (ANVT)  
-📅 28 Sep 2026 (Monday)  
-⏰ Dep: 11:55 PM &nbsp;&nbsp; Arr: 29 Sep 7:35 PM  
+📅 1 Oct 2026 (Thursday)  
+⏰ Dep: 11:55 PM &nbsp;&nbsp; Arr: 2 Oct 7:35 PM  
 ⏱️ Journey: 19 hrs 40 min  
 💺 Class: Sleeper &nbsp;&nbsp; 💰 ~₹700/person  
 """)
@@ -108,8 +108,8 @@ with tr2:
     st.markdown("""
 **Jharkhand Swarna Jayanti Express (12818)**  
 🛤️ Anand Vihar (ANVT) → Ranchi (RNC)  
-📅 4 Oct 2026 (Sunday)  
-⏰ Dep: 8:45 PM &nbsp;&nbsp; Arr: 5 Oct 3:40 PM  
+📅 10 Oct 2026 (Saturday)  
+⏰ Dep: 8:45 PM &nbsp;&nbsp; Arr: 11 Oct 3:40 PM  
 ⏱️ Journey: 18 hrs 55 min  
 💺 Class: Sleeper &nbsp;&nbsp; 💰 ~₹700/person  
 """)
@@ -124,8 +124,8 @@ with b1:
     st.markdown("""
 **Deltin Travels (AC Semi-Sleeper 2+2)**  
 🛤️ Delhi (KG ISBT / Majnu ka Tila) → Manali  
-📅 29 Sep 2026 (Tuesday)  
-⏰ Dep: 11:55 PM &nbsp;&nbsp; Arr: 30 Sep ~11:10 AM  
+📅 2 Oct 2026 (Friday)  
+⏰ Dep: 11:55 PM &nbsp;&nbsp; Arr: 3 Oct ~11:10 AM  
 ⏱️ Journey: ~11 hrs 15 min  
 💰 ~₹1,100/person  
 """)
@@ -134,8 +134,8 @@ with b2:
     st.markdown("""
 **HRTC Ordinary Bus (Non-AC Seater 3+2)**  
 🛤️ Manali → Delhi (KG ISBT)  
-📅 3 Oct 2026 (Saturday)  
-⏰ Dep: 7:00 PM &nbsp;&nbsp; Arr: 4 Oct ~8:30 AM  
+📅 9 Oct 2026 (Friday)  
+⏰ Dep: 7:00 PM &nbsp;&nbsp; Arr: 10 Oct ~8:30 AM  
 ⏱️ Journey: ~13 hrs 30 min  
 💰 ₹1,000/person (fixed fare)  
 """)
@@ -148,11 +148,11 @@ st.markdown("### 🏨 Accommodation Summary")
 st.markdown("""
 | Night | Location | Type |
 |-------|----------|------|
-| 28 Sep | Train (12825) | Sleeper berth |
-| 29 Sep | Bus (Deltin Travels) | AC Semi-Sleeper |
-| 30 Sep – 2 Oct | Manali (Mall Road area) | Hotel (3 nights) |
-| 3 Oct | Bus (HRTC) | Non-AC Seater |
-| 4 Oct | Train (12818) | Sleeper berth |
+| 1 Oct | Train (12825) | Sleeper berth |
+| 2 Oct | Bus (Deltin Travels) | AC Semi-Sleeper |
+| 3 Oct – 8 Oct | Manali (Mall Road area) | Hotel (6 nights) |
+| 9 Oct | Bus (HRTC) | Non-AC Seater |
+| 10 Oct | Train (12818) | Sleeper berth |
 """)
 
 st.info("🏨 **Hotel Tip:** Mall Road के पास रहें — transport, food और market सब पास। Budget: ₹800–1500/room/night in October.")

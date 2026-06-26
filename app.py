@@ -231,8 +231,7 @@ justify-content: flex-end;
 """, unsafe_allow_html=True)
 
 
-# ── Trip Organizers ───────────────────────────────────────────────────────────
-img1 = img_to_base64("images/profile anima.jpeg")
+# ── Trip Organizer ────────────────────────────────────────────────────────────
 img2 = img_to_base64("images/profile kishan.jpeg")
 
 def make_img_tag(b64):
@@ -252,36 +251,15 @@ st.markdown("""
   margin-bottom: 12px;
 ">
   <h2 style="color:#F0F4FF; margin:0; font-family:Georgia,serif; font-size:22px; text-shadow:0 2px 6px rgba(0,0,0,0.6);">
-    👥 Trip Organizers
+    👤 Trip Organizer
   </h2>
 </div>
 """, unsafe_allow_html=True)
 
-# --- Dono profiles columns me ---
-col1, col2 = st.columns(2)
+# --- Single centered profile ---
+col_l, col_mid, col_r = st.columns([1, 2, 1])
 
-with col1:
-    st.markdown(f"""
-<div style="
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 20px;
-  padding: 28px 20px;
-  text-align: center;
-  color: #C9D8F0;
-  backdrop-filter: blur(6px);
-">
-  {make_img_tag(img1)}
-  <h3 style="color:#F0F4FF; margin:14px 0 10px; font-size:18px; text-shadow:0 1px 4px rgba(0,0,0,0.5);">Anima Tirkey</h3>
-  <p style="line-height:2.2; font-size:14px; margin:0;">
-    📞 Call: 7485 841562<br>
-    💬 WhatsApp: 7485 841562<br>
-    📧 animatirkey306@gmail.com
-  </p>
-</div>
-""", unsafe_allow_html=True)
-
-with col2:
+with col_mid:
     st.markdown(f"""
 <div style="
   background: rgba(0, 0, 0, 0.6);
@@ -294,16 +272,33 @@ with col2:
 ">
   {make_img_tag(img2)}
   <h3 style="color:#F0F4FF; margin:14px 0 10px; font-size:18px; text-shadow:0 1px 4px rgba(0,0,0,0.5);">Kishan Kumar</h3>
-  <p style="line-height:2.2; font-size:14px; margin:0;">
-    📞 Call: 969 324 0618<br>
-    💬 WhatsApp: 7050 311718<br>
+  <p style="line-height:2.2; font-size:14px; margin:0 0 16px 0;">
     📧 KumarKrishna70503@gmail.com
   </p>
+  <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+    <a href="https://www.instagram.com/ourtrip_2026/" target="_blank" style="
+      text-decoration:none; color:white; font-weight:600; font-size:13px;
+      padding:9px 16px; border-radius:10px;
+      background:linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);">
+      📷 Instagram
+    </a>
+    <a href="tel:9693240618" style="
+      text-decoration:none; color:white; font-weight:600; font-size:13px;
+      padding:9px 16px; border-radius:10px;
+      background:linear-gradient(135deg, #2D6A9F, #1B4332);">
+      📞 Call
+    </a>
+    <a href="https://wa.me/7050311718" target="_blank" style="
+      text-decoration:none; color:white; font-weight:600; font-size:13px;
+      padding:9px 16px; border-radius:10px;
+      background:#25D366;">
+      💬 WhatsApp
+    </a>
+  </div>
 </div>
 """, unsafe_allow_html=True)
 
 st.markdown("<div style='margin-bottom:20px;'></div>", unsafe_allow_html=True)
-
 # ── Quick Stats ───────────────────────────────────────────────────────────────
 c1, c2, c3, c4 = st.columns(4)
 c1.metric("🚆 Train Days",   "2",  "Rajdhani Express")
@@ -357,7 +352,6 @@ pages_info = [
     ("🧗 Activities List",     "All activities & adventure options",          "Activities_List"),
     ("📆 Time Table",          "Full trip schedule at a glance",              "Time_Table"),
     ("🗓️ Day Plan",           "Detailed per-day breakdown",                  "Day_Plan"),
-    ("⏰ Time Plan",           "Hour-by-hour itinerary",                      "Time_Plan"),
     ("👥 Member List",         "View registered trip members",                "Member_List"),
 ]
 
