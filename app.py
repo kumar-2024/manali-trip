@@ -305,10 +305,75 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# --- Single centered profile ---
-col_l, col_mid, col_r = st.columns([1, 2, 1])
+# ── Trip Organizers ───────────────────────────────────────────────────────────
+img1 = img_to_base64("images/profile anima.jpeg")
+img2 = img_to_base64("images/profile kishan.jpeg")
 
-with col_mid:
+def make_img_tag(b64):
+    if b64:
+        return f'<img src="data:image/jpeg;base64,{b64}" style="width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid #E9A84C;display:block;margin:0 auto;">'
+    return '<div style="width:150px;height:150px;border-radius:50%;background:rgba(27,58,92,0.5);border:4px solid #E9A84C;margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:55px;">👤</div>'
+
+# --- Heading ---
+st.markdown("""
+<div style="
+  background: transparent;
+  border: 1px solid rgba(201,216,240,0.2);
+  border-radius: 16px;
+  padding: 18px 20px;
+  text-align: center;
+  backdrop-filter: blur(0px);
+  margin-bottom: 12px;
+">
+  <h2 style="color:#F0F4FF; margin:0; font-family:Georgia,serif; font-size:22px; text-shadow:0 2px 6px rgba(0,0,0,0.6);">
+    👥 Trip Organizers
+  </h2>
+</div>
+""", unsafe_allow_html=True)
+
+# --- Two profiles side by side ---
+col1, col2 = st.columns(2)
+
+with col1:
+    st.markdown(f"""
+<div style="
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 20px;
+  padding: 28px 20px;
+  text-align: center;
+  color: #C9D8F0;
+  backdrop-filter: blur(6px);
+">
+  {make_img_tag(img1)}
+  <h3 style="color:#F0F4FF; margin:14px 0 10px; font-size:18px; text-shadow:0 1px 4px rgba(0,0,0,0.5);">Anima Tirkey</h3>
+  <p style="line-height:2.2; font-size:14px; margin:0 0 16px 0;">
+    📧 animatirkey306@gmail.com
+  </p>
+  <div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+    <a href="https://www.instagram.com/ourtrip_2026/" target="_blank" style="
+      text-decoration:none; color:white; font-weight:600; font-size:13px;
+      padding:9px 16px; border-radius:10px;
+      background:linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);">
+      📷 Instagram
+    </a>
+    <a href="tel:7485841562" style="
+      text-decoration:none; color:white; font-weight:600; font-size:13px;
+      padding:9px 16px; border-radius:10px;
+      background:linear-gradient(135deg, #2D6A9F, #1B4332);">
+      📞 Call
+    </a>
+    <a href="https://wa.me/917485841562" target="_blank" style="
+      text-decoration:none; color:white; font-weight:600; font-size:13px;
+      padding:9px 16px; border-radius:10px;
+      background:#25D366;">
+      💬 WhatsApp
+    </a>
+  </div>
+</div>
+""", unsafe_allow_html=True)
+
+with col2:
     st.markdown(f"""
 <div style="
   background: rgba(0, 0, 0, 0.6);
@@ -337,7 +402,7 @@ with col_mid:
       background:linear-gradient(135deg, #2D6A9F, #1B4332);">
       📞 Call
     </a>
-    <a href="https://wa.me/7050311718" target="_blank" style="
+    <a href="https://wa.me/917050311718" target="_blank" style="
       text-decoration:none; color:white; font-weight:600; font-size:13px;
       padding:9px 16px; border-radius:10px;
       background:#25D366;">
