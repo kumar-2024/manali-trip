@@ -18,21 +18,23 @@ tr:hover td { background: rgba(201,216,240,0.05); }
 """, unsafe_allow_html=True)
 
 st.title("📆 Full Trip Time Table")
-st.markdown("*रांची → मनाली → रांची — Complete Travel Chart*")
+st.markdown("*रांची → चंडीगढ़ → शिमला → कसोल → मनाली → चंडीगढ़ → रांची — Complete Travel Chart*")
 st.markdown("---")
 
 # ── Day-by-Day Overview ───────────────────────────────────────────────────────
 st.markdown("### 🗓️ Day Overview")
 
 data = [
-    ("Day 1", "1 Oct (Thu)",  "🚆 Ranchi → Delhi", "Train 12825 dep 11:55 PM from RNC", "#1B3A5C"),
-    ("Day 2", "2 Oct (Fri)",  "🏙️ Delhi Transit + Bus", "Arrive ANVT 7:35 PM · Bus dep 11:55 PM (KG ISBT)", "#1B3A5C"),
-    ("Day 3", "3 Oct (Sat)",  "🏔️ Manali Arrival", "Arrive ~11:10 AM · Check-in · Mall Road · Rest", "#1B4332"),
-    ("Day 4", "4 Oct (Sun)",  "🎯 Manali Explore",  "Local sightseeing / adventure activities", "#2D3A1A"),
-    ("Day 5", "5 Oct (Mon)",  "🎯 Manali Explore",  "Rohtang / Solang / Rafting / Trekking", "#1A2D3A"),
-    ("Day 6", "9 Oct (Fri)",  "🚌 Manali → Delhi",  "HRTC Bus dep 7:00 PM from Manali", "#1B3A5C"),
-    ("Day 7", "10 Oct (Sat)", "🏙️ Delhi Transit + Train", "Arrive KG ISBT ~8:30 AM · Train 12818 dep 8:45 PM (ANVT)", "#1B3A5C"),
-    ("Day 8", "11 Oct (Sun)", "🚆 Delhi → Ranchi",  "Arrive Ranchi 3:40 PM", "#2A1A2A"),
+    ("Day 1",  "1 Oct (Thu)",  "🚆 Ranchi → Chandigarh",   "Train 18309 dep 5:10 PM from Ranchi Jn", "#1B3A5C"),
+    ("Day 2",  "2 Oct (Fri)",  "🚆 Onboard Train",          "Continuing journey towards Chandigarh", "#1B3A5C"),
+    ("Day 3",  "3 Oct (Sat)",  "🏔️ Chandigarh+Shimla",   "Arrive Chandigarh 2:53 AM · Private car onward to Shimla", "#1B4332"),
+    ("Day 4",  "4 Oct (Sun)",  "🎯 Shimla",                 "Sightseeing — Mall Road, Ridge, Jakhoo Temple", "#2D3A1A"),
+    ("Day 5",  "5 Oct (Mon)",  "🚗 Kasol",         "Drive to Kasol, evening at leisure by Parvati river", "#0369A1"),
+    ("Day 6",  "6 Oct (Tue)",  "🎯 Kasol",                  "Kasol village walk, café hopping, optional Chalal/Tosh trek", "#0369A1"),
+    ("Day 7",  "7 Oct (Wed)",  "🚗 Manali",         "Drive to Manali, hotel check-in, Mall Road evening", "#1A2D3A"),
+    ("Day 8",  "8 Oct (Thu)",  "🎯 Manali",                 "Local sightseeing / adventure activities", "#1A2D3A"),
+    ("Day 9",  "9 Oct (Fri)",  "🚗 shimla+Chandigarh",    "Private car departs Manali morning · Drops Chandigarh afternoon", "#92400E"),
+    ("Day 10", "10 Oct (Sat)", "🚆 Chandigarh → Ranchi",    "Train 18310 dep ~1:45 AM · Arrive Ranchi 8:15 AM", "#2A1A2A"),
 ]
 
 html_rows = ""
@@ -67,12 +69,12 @@ with t1:
 **🟢 Onward Journey (जाने का सफर)**
 | Leg | Mode | Details |
 |-----|------|---------|
-| Ranchi → Delhi | Train 12825 | 1 Oct, dep 11:55 PM |
-| Delhi → Manali | Deltin Travels AC Bus | 2 Oct, dep 11:55 PM (KG/Majnu ka Tila) |
+| Ranchi → Chandigarh | Train 18309 (SBP–JAT Express) | 1 Oct (Thu), dep 5:10 PM |
+| Chandigarh → Shimla → Kasol → Manali | Private Car (full trip booking) | 3 Oct onwards |
 
-✅ Book train in advance (Tatkal if needed)  
-✅ ISBT Kashmere Gate for Manali buses  
-✅ Arrive Delhi by ~7:35 PM (ANVT) — enough time to reach ISBT  
+✅ Train 18309 runs **Mon / Tue / Thu / Sat** — confirm 1 Oct run day on IRCTC before booking  
+✅ Arrives Chandigarh **2:53 AM (Sat, 3 Oct)** — ~33 hr 43 min journey  
+✅ Car covers Chandigarh ⇄ Shimla ⇄ Kasol ⇄ Manali ⇄ Chandigarh as one full package  
 """)
 
 with t2:
@@ -80,12 +82,13 @@ with t2:
 **🔴 Return Journey (वापसी का सफर)**
 | Leg | Mode | Details |
 |-----|------|---------|
-| Manali → Delhi | HRTC Ordinary Bus | 9 Oct, dep 7:00 PM |
-| Delhi → Ranchi | Train 12818 | 10 Oct, dep 8:45 PM (ANVT) |
+| Manali → Chandigarh | Private Car | 9 Oct, drop-off afternoon |
+| Chandigarh → Ranchi | Train 18310 (JAT–SBP Express) | 11 Oct, dep ~1:45 AM |
 
-✅ Arrive Delhi ~8:30 AM — ample time before train  
-✅ Book Rajdhani/Express return well in advance  
-✅ ~13.5 hr overnight bus journey  
+✅ Car drops you in Chandigarh by afternoon on 9 Oct  
+✅ Train 18310 runs **Mon / Wed / Fri / Sat** — confirm exact 10/11 Oct night run on IRCTC  
+✅ Extra free day in Chandigarh (9–10 Oct) before boarding the late-night train  
+✅ Arrives Ranchi **8:15 AM (Sun, 11 Oct)**  
 """)
 
 st.markdown("---")
@@ -96,49 +99,50 @@ st.markdown("### 🚂 Train Details")
 tr1, tr2 = st.columns(2)
 with tr1:
     st.markdown("""
-**Jharkhand Sampark Kranti Express (12825)**  
-🛤️ Ranchi (RNC) → Anand Vihar (ANVT)  
+**18309 — SBP–JAT Express (Sambalpur–Jammu Tawi)**  
+🛤️ Ranchi (RNC) → Chandigarh (CDG)  
 📅 1 Oct 2026 (Thursday)  
-⏰ Dep: 11:55 PM &nbsp;&nbsp; Arr: 2 Oct 7:35 PM  
-⏱️ Journey: 19 hrs 40 min  
-💺 Class: Sleeper &nbsp;&nbsp; 💰 ~₹700/person  
+⏰ Dep: 5:10 PM &nbsp;&nbsp; Arr: 3 Oct 2:53 AM  
+⏱️ Journey: ~33 hrs 43 min  
+🗓️ Runs on: Mon, Tue, Thu, Sat  
+💺 Class: Sleeper/3AC &nbsp;&nbsp; 💰 To be confirmed on IRCTC  
 """)
 
 with tr2:
     st.markdown("""
-**Jharkhand Swarna Jayanti Express (12818)**  
-🛤️ Anand Vihar (ANVT) → Ranchi (RNC)  
-📅 10 Oct 2026 (Saturday)  
-⏰ Dep: 8:45 PM &nbsp;&nbsp; Arr: 11 Oct 3:40 PM  
-⏱️ Journey: 18 hrs 55 min  
-💺 Class: Sleeper &nbsp;&nbsp; 💰 ~₹700/person  
+**18310 — JAT–SBP Express (Jammu Tawi–Sambalpur)**  
+🛤️ Chandigarh (CDG) → Ranchi (RNC)  
+📅 Dep night of 10 Oct / early 11 Oct 2026  
+⏰ Dep: ~1:45 AM &nbsp;&nbsp; Arr: 8:15 AM (same day)  
+⏱️ Journey: ~6.5 hrs *(verify — confirm full schedule on IRCTC)*  
+🗓️ Runs on: Mon, Wed, Fri, Sat  
+💺 Class: Sleeper/3AC &nbsp;&nbsp; 💰 To be confirmed on IRCTC  
 """)
+
+st.info("ℹ️ Train numbers and run-days noted above are as provided — please do a final IRCTC check closer to the booking date, since schedules can be revised.")
 
 st.markdown("---")
 
-# ── Bus Details ───────────────────────────────────────────────────────────────
-st.markdown("### 🚌 Bus Details")
+# ── Private Car (Himachal Trip) ───────────────────────────────────────────────
+st.markdown("### 🚗 Private Car — Full Himachal Trip")
 
-b1, b2 = st.columns(2)
-with b1:
-    st.markdown("""
-**Deltin Travels (AC Semi-Sleeper 2+2)**  
-🛤️ Delhi (KG ISBT / Majnu ka Tila) → Manali  
-📅 2 Oct 2026 (Friday)  
-⏰ Dep: 11:55 PM &nbsp;&nbsp; Arr: 3 Oct ~11:10 AM  
-⏱️ Journey: ~11 hrs 15 min  
-💰 ~₹1,100/person  
-""")
+st.markdown("""
+<div style="background:rgba(13,27,42,0.8);border:1px solid rgba(201,216,240,0.15);border-radius:12px;padding:20px;">
 
-with b2:
-    st.markdown("""
-**HRTC Ordinary Bus (Non-AC Seater 3+2)**  
-🛤️ Manali → Delhi (KG ISBT)  
-📅 9 Oct 2026 (Friday)  
-⏰ Dep: 7:00 PM &nbsp;&nbsp; Arr: 10 Oct ~8:30 AM  
-⏱️ Journey: ~13 hrs 30 min  
-💰 ₹1,000/person (fixed fare)  
-""")
+**Route:** Chandigarh → Shimla → Kasol → Manali → Chandigarh
+
+| Detail | Info |
+|--------|------|
+| Pickup | Chandigarh, 3 Oct ~3:00 AM (on train arrival) |
+| Drop-off | Chandigarh, 9 Oct afternoon |
+| Duration | 6 days / 5 nights on road + local use at each stop |
+| Usage | Chandigarh–Shimla, Shimla–Kasol, Kasol–Manali transfers + local sightseeing at each stop + Manali–Chandigarh return |
+| Vehicle suggestion | Innova / Innova Crysta or similar (for hill roads + group + luggage) |
+
+</div>
+""", unsafe_allow_html=True)
+
+st.info("🚗 **Booking Tip:** Book the car as a full package (point-to-point + local usage) with a Himachal-based or Chandigarh-based travel operator — confirm toll, driver allowance, and night-halt charges are included in the quote.")
 
 st.markdown("---")
 
@@ -148,32 +152,34 @@ st.markdown("### 🏨 Accommodation Summary")
 st.markdown("""
 | Night | Location | Type |
 |-------|----------|------|
-| 1 Oct | Train (12825) | Sleeper berth |
-| 2 Oct | Bus (Deltin Travels) | AC Semi-Sleeper |
-| 3 Oct – 8 Oct | Manali (Mall Road area) | Hotel (6 nights) |
-| 9 Oct | Bus (HRTC) | Non-AC Seater |
-| 10 Oct | Train (12818) | Sleeper berth |
+| 1 Oct | Train (18309) | Sleeper berth |
+| 2 Oct | Train (18309) | Sleeper berth |
+| 3 Oct – 4 Oct | Shimla | Hotel (2 nights) |
+| 5 Oct – 6 Oct | Kasol | Hotel / Guesthouse (2 nights) |
+| 7 Oct – 8 Oct | Manali (Mall Road area) | Hotel (2 nights) |
+| 9 Oct – 10 Oct | Chandigarh | Hotel (1 night, extra free day) |
+| 10–11 Oct | Train (18310) | Sleeper berth |
 """)
 
-st.info("🏨 **Hotel Tip:** Mall Road के पास रहें — transport, food और market सब पास। Budget: ₹800–1500/room/night in October.")
+st.info("🏨 **Hotel Tip:** Shimla — Mall Road के पास; Kasol — Parvati river-side guesthouse; Manali — Mall Road के पास। Budget: ₹800–1500/room/night in October.")
 
 st.markdown("---")
 
 # ── Budget Summary ────────────────────────────────────────────────────────────
-st.markdown("### 💰 Transport Budget (Per Person)")
+st.markdown("### 💰 Transport Budget (Per Person — Estimated)")
 
 st.markdown("""
 | Leg | Mode | Cost |
 |-----|------|------|
-| Ranchi → Delhi | Train 12825 (Sleeper) | ₹700 |
-| Delhi → Manali | Deltin Travels AC Bus | ₹1,100 |
-| Manali → Delhi | HRTC Ordinary Bus | ₹1,000 |
-| Delhi → Ranchi | Train 12818 (Sleeper) | ₹700 |
-| **Total (1 person)** | | **₹3,500** |
-| **Total (2 persons)** | | **₹7,000** |
+| Ranchi → Chandigarh | Train 18309 (Sleeper, est.) | ₹800–900 |
+| Chandigarh ⇄ Shimla ⇄ Kasol ⇄ Manali ⇄ Chandigarh | Private Car (shared per person, est.) | ₹2,000–3,000 |
+| Chandigarh → Ranchi | Train 18310 (Sleeper, est.) | ₹800–900 |
+| **Total (1 person, estimated)** | | **₹3,600–4,800** |
+
+⚠️ Car cost depends on group size and final vehicle quote — divide total car fare by number of travelers for an accurate per-head cost.
 """)
 
-st.success("✅ कुल यात्रा समय (आने-जाने): ~35 घंटे &nbsp;|&nbsp; कुल किराया (प्रति व्यक्ति): ~₹3,500 — बेहद किफायती बजट!")
+st.success("✅ कुल यात्रा (आने-जाने ट्रेन + प्राइवेट गाड़ी): अनुमानित किराया प्रति व्यक्ति ~₹3,600–4,800 — final quote car booking confirm hone ke baad update karein।")
 
 st.markdown("---")
-st.caption("📆 Time Table · Ranchi–Manali–Ranchi Trip 2026")
+st.caption("📆 Time Table · Ranchi–Chandigarh–Shimla–Kasol–Manali–Chandigarh–Ranchi Trip 2026")

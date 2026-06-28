@@ -1,9 +1,9 @@
-# pages/1_🏔️_About_Manali.py
+# pages/1_🏔️_About_himachal.py
 import streamlit as st
 import base64
 import os
 
-st.set_page_config(page_title="About Manali", page_icon="🏔️", layout="wide")
+st.set_page_config(page_title="About Himachal", page_icon="🏔️", layout="wide")
 
 # ── Load Rohtang Image and return base64 ──────────────────────────────────────
 @st.cache_data
@@ -88,7 +88,7 @@ div.stExpander {{ background: rgba(13,27,42,0.45); border: 1px solid rgba(201,21
 </style>
 """, unsafe_allow_html=True)
 
-st.title("🏔️ About Manali")
+st.title("🏔️ About Himachal")
 st.markdown("*Your complete destination guide for October 2026*")
 
 st.markdown("---")
@@ -126,7 +126,7 @@ with col2:
 st.markdown("---")
 
 # ── Weather ───────────────────────────────────────────────────────────────────
-st.markdown("### 🌡️ October Weather in Manali")
+st.markdown("### 🌡️ October Weather in himachal")
 
 w1, w2, w3, w4 = st.columns(4)
 w1.metric("🌅 Day Temp", "12–18°C", "Pleasant & sunny")

@@ -5,7 +5,7 @@ import base64
 import os
 
 st.set_page_config(
-    page_title="OUR TRIP - Manali Trip 2026 🏔️",
+    page_title="OUR TRIP - himachal Trip 2026 🏔️",
     page_icon="🏔️",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -19,25 +19,6 @@ def img_to_base64(path):
             return base64.b64encode(img_file.read()).decode()
     except Exception:
         return ""
-
-
-# ── Background image load (app_bg — sabhi formats support) ───────────────────
-@st.cache_data
-def get_bg_img():
-    for fname, mime in [
-        ("app_bg.webp", "image/webp"),
-        ("app_bg.jpg",  "image/jpeg"),
-        ("app_bg.jpeg", "image/jpeg"),
-        ("app_bg.png",  "image/png"),
-    ]:
-        img_path = os.path.join(os.path.dirname(__file__), "images", fname)
-        if os.path.exists(img_path):
-            with open(img_path, "rb") as f:
-                b64 = base64.b64encode(f.read()).decode()
-            return f"data:{mime};base64,{b64}"
-    return ""
-
-bg_image_url = get_bg_img()
 
 
 # ── Global CSS ────────────────────────────────────────────────────────────────
@@ -75,11 +56,7 @@ section.main > div {{
 }}
 
 .stApp {{
-    background-image: url('{bg_image_url}');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-color: var(--dusk);
 }}
 
 html, body, [class*="css"] {{
@@ -209,13 +186,14 @@ display: flex;
 flex-direction: column;
 justify-content: flex-end;
 ">
-  <p style="color:#FF0000; letter-spacing:4px; font-size:12px; text-transform:uppercase; margin-bottom:8px; font-weight:700;">
-  ✈️ Ranchi → Manali → Ranchi
+  <p style="color: #FFFFFF; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); letter-spacing:4px; font-size:16px; text-transform:uppercase; margin-bottom:50px; font-weight:700;">
+  ✈️ Ranchi → himachal  → Ranchi
 </p>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+
+<div style="display:flex;gap:12px;flex-wrap:wrap;">
       <span style="background:rgba(23,16,76,1);border:1px solid rgba(233,168,76,0.55);
         color:#E9A84C;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:500;">
-        🗓 8 Days · 7 Nights
+        🗓 10 days
       </span>
       <span style="background:rgba(45,106,159,1);border:1px solid rgba(45,106,159,0.6);
         color:#C9D8F0;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:500;">
@@ -229,6 +207,77 @@ justify-content: flex-end;
   </div>
 </div>
 """, unsafe_allow_html=True)
+
+
+# ── Route Overview ────────────────────────────────────────────────────────────
+st.markdown("### 🗺️ Himachal, Route & Highlights")
+col1, col2 = st.columns(2)
+
+with col1:
+    st.markdown("""
+<div style="background:rgba(13,27,42,0.35);padding:20px;border-radius:12px;
+  border:1px solid rgba(201,216,240,0.18);backdrop-filter:blur(8px);box-shadow:0 4px 15px rgba(0,0,0,0.15);">
+  <strong style="color:#F0F4FF;font-size:16px;">📍 Full Route</strong><br><br>
+  <pre style="background:transparent;color:#C9D8F0;border:none;padding:10px 0 0 0;
+    font-family:monospace;font-size:14px;line-height:1.4;">
+<pre>
+Ranchi ─🚆→ Chandigarh ─🚌→ Shimla ─🚌→ Kasol ─🚌→ Manali<br><br>
+ ─🚌→ Chandigarh ─🚆→ Ranchi<br><br>
+</pre>
+</div>
+""", unsafe_allow_html=True)
+
+with col2:
+    st.markdown("""
+<div style="background:rgba(13,27,42,0.35);padding:20px;border-radius:12px;
+  border:1px solid rgba(201,216,240,0.18);backdrop-filter:blur(8px);box-shadow:0 4px 15px rgba(0,0,0,0.15);">
+<strong style="color:#F0F4FF;font-size:16px;">📍 Location</strong><br><br>
+<strong>📍shimla</strong> — 🍁 Pleasant weather<br><br>
+<strong>📍kasol</strong> — 🥾 Trekking + 🏕️ Camping<br><br>
+<strong>📍manali</strong> — 🎯 Activities<br><br>
+</div>
+""", unsafe_allow_html=True)
+
+st.markdown("---")
+
+
+# ── Navigation Buttons ────────────────────────────────────────────────────────
+st.markdown("### 📖 Explore App Pages")
+
+pages_info = [
+    ("⚠️ Important Notice",  "Registration rules, eligibility & guidelines", "Important_Notice"),
+    ("📝 Registration Form",  "Register yourself for the trip",               "Registration_Form"),
+    ("🏔️ About himachal ",       "Destination guide, weather & packing tips",    "About_himachal"),
+    ("📸 Posts",              "Photos & videos from the trip",               "Posts"),
+    ("🧗 Activities List",     "All activities & adventure options",          "Activities_List"),
+    ("📆 Time Table",          "Full trip schedule at a glance",              "Time_Table"),
+    ("👥 Member List",         "View registered trip members",                "Member_List"),
+]
+
+cols = st.columns(2)
+for i, (name, desc, url_path) in enumerate(pages_info):
+    with cols[i % 2]:
+        st.markdown(f"""
+<a href="/{url_path}" target="_self" class="nav-button-link">
+  <div class="nav-glass-button"
+     style="
+        background: rgba(15, 23, 42, 0.75);
+        border: 1px solid rgba(255,255,255,0.12);
+        backdrop-filter: blur(12px);
+        border-radius: 12px;
+        padding: 12px;
+     ">
+    <strong style="color:#E9A84C;font-size:16px;text-shadow:0 1px 4px rgba(0,0,0,0.8);">
+        {name}
+    </strong><br>
+    <span style="color:#FFFFFF;font-size:13px;font-weight:400;text-shadow:0 1px 3px rgba(0,0,0,0.8);opacity:0.9;">
+        {desc}
+    </span>
+</div>
+</a>
+""", unsafe_allow_html=True)
+
+st.markdown("---")
 
 
 # ── Trip Organizer ────────────────────────────────────────────────────────────
@@ -300,75 +349,4 @@ with col_mid:
 
 st.markdown("<div style='margin-bottom:20px;'></div>", unsafe_allow_html=True)
 
-
-# ── Route Overview ────────────────────────────────────────────────────────────
-st.markdown("### 🗺️ Route & Highlights")
-col1, col2 = st.columns(2)
-
-with col1:
-    st.markdown("""
-<div style="background:rgba(13,27,42,0.35);padding:20px;border-radius:12px;
-  border:1px solid rgba(201,216,240,0.18);backdrop-filter:blur(8px);box-shadow:0 4px 15px rgba(0,0,0,0.15);">
-  <strong style="color:#F0F4FF;font-size:16px;">📍 Full Route</strong>
-  <pre style="background:transparent;color:#C9D8F0;border:none;padding:10px 0 0 0;
-    font-family:monospace;font-size:14px;line-height:1.4;">
-Ranchi ──🚆──► Delhi ──🚌──► Manali
-  ↑                               ↓
-Ranchi ◄──🚆── Delhi ◄──🚌── Manali</pre>
-  <span style="display:inline-block;margin-top:10px;">🏨 <strong>Base:</strong> Mall Road, Manali</span>
-</div>
-""", unsafe_allow_html=True)
-
-with col2:
-    st.markdown("""
-<div style="background:rgba(13,27,42,0.35);padding:20px;border-radius:12px;
-  border:1px solid rgba(201,216,240,0.18);backdrop-filter:blur(8px);box-shadow:0 4px 15px rgba(0,0,0,0.15);">
-  <strong style="color:#F0F4FF;font-size:16px;">🔥 Adventure Days</strong><br><br>
-  🪂 <strong>Day 4</strong> — Solang: Paragliding + Zipline + ATV + Zorbing + Rope<br><br>
-  🌊 <strong>Day 5</strong> — Kullu: River Rafting + Jogini Waterfall Trek<br><br>
-  ❄️ <strong>Day 6</strong> — Rohtang Pass + Atal Tunnel + Sissu
-</div>
-""", unsafe_allow_html=True)
-
-st.markdown("---")
-
-
-# ── Navigation Buttons ────────────────────────────────────────────────────────
-st.markdown("### 📖 Explore App Pages")
-
-pages_info = [
-    ("⚠️ Important Notice",  "Registration rules, eligibility & guidelines", "Important_Notice"),
-    ("📝 Registration Form",  "Register yourself for the trip",               "Registration_Form"),
-    ("📸 Posts",              "Photos & videos from the trip",               "Posts"),
-    ("🏔️ About Manali",       "Destination guide, weather & packing tips",    "About_Manali"),
-    ("🧗 Activities List",     "All activities & adventure options",          "Activities_List"),
-    ("📆 Time Table",          "Full trip schedule at a glance",              "Time_Table"),
-    ("🗓️ Day Plan",           "Detailed per-day breakdown",                  "Day_Plan"),
-    ("👥 Member List",         "View registered trip members",                "Member_List"),
-]
-
-cols = st.columns(2)
-for i, (name, desc, url_path) in enumerate(pages_info):
-    with cols[i % 2]:
-        st.markdown(f"""
-<a href="/{url_path}" target="_self" class="nav-button-link">
-  <div class="nav-glass-button"
-     style="
-        background: rgba(15, 23, 42, 0.75);
-        border: 1px solid rgba(255,255,255,0.12);
-        backdrop-filter: blur(12px);
-        border-radius: 12px;
-        padding: 12px;
-     ">
-    <strong style="color:#E9A84C;font-size:16px;text-shadow:0 1px 4px rgba(0,0,0,0.8);">
-        {name}
-    </strong><br>
-    <span style="color:#FFFFFF;font-size:13px;font-weight:400;text-shadow:0 1px 3px rgba(0,0,0,0.8);opacity:0.9;">
-        {desc}
-    </span>
-</div>
-</a>
-""", unsafe_allow_html=True)
-
-st.markdown("---")
 st.caption("🏔️ Manali Trip 2026 · Built with Streamlit + MongoDB · October Adventure")
