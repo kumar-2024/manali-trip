@@ -57,13 +57,50 @@ div[data-testid="stForm"] {{
 }}
 
 div[data-baseweb="input"] input,
-div[data-baseweb="select"],
-div[data-baseweb="textarea"] textarea {{
-    background-color: rgba(201,216,240,0.06) !important;
+div[data-baseweb="select"] input,
+div[data-baseweb="select"] div,
+div[data-baseweb="select"] span,
+div[data-baseweb="textarea"] textarea,
+div[data-baseweb="base-input"] input,
+div[data-baseweb="base-input"] {{
+    background-color: #15293E !important;
     border: 1px solid rgba(201,216,240,0.2) !important;
     color: #F0F4FF !important;
+    -webkit-text-fill-color: #F0F4FF !important;
+    caret-color: #F0F4FF !important;
     border-radius: 8px !important;
 }}
+
+/* Select / dropdown ka closed-state box bhi solid dark rahe (light mode override) */
+div[data-baseweb="select"] > div {{
+    background-color: #15293E !important;
+}}
+
+/* Number input ke +/- buttons ka wrapper bhi dark */
+div[data-testid="stNumberInput"] > div {{
+    background-color: #15293E !important;
+}}
+
+/* Placeholder text bhi visible rahe */
+div[data-baseweb="input"] input::placeholder,
+div[data-baseweb="textarea"] textarea::placeholder {{
+    color: rgba(240,244,255,0.5) !important;
+    -webkit-text-fill-color: rgba(240,244,255,0.5) !important;
+}}
+
+/* Number input ke andar ka text (age field) */
+div[data-testid="stNumberInput"] input {{
+    background-color: #15293E !important;
+    color: #F0F4FF !important;
+    -webkit-text-fill-color: #F0F4FF !important;
+}}
+
+/* Selectbox ka dropdown panel (jo niche khulta hai) */
+div[data-baseweb="popover"] li,
+div[data-baseweb="menu"] li {{
+    color: #0D1B2A !important;
+}}
+
 label {{ color: #C9D8F0 !important; font-size: 14px !important; font-weight: 500; }}
 div.stButton > button {{
     background: linear-gradient(135deg, #2D6A9F, #1B4332);
