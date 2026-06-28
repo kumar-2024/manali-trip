@@ -95,10 +95,23 @@ div[data-testid="stNumberInput"] input {{
     -webkit-text-fill-color: #F0F4FF !important;
 }}
 
-/* Selectbox ka dropdown panel (jo niche khulta hai) */
+/* Selectbox ka dropdown panel (jo niche khulta hai - Blood Group, Gender, T-Shirt Size) */
+div[data-baseweb="popover"] {{
+    background-color: #15293E !important;
+}}
+div[data-baseweb="popover"] ul,
+div[data-baseweb="menu"] ul {{
+    background-color: #15293E !important;
+}}
 div[data-baseweb="popover"] li,
 div[data-baseweb="menu"] li {{
-    color: #0D1B2A !important;
+    background-color: #15293E !important;
+    color: #F0F4FF !important;
+}}
+div[data-baseweb="popover"] li:hover,
+div[data-baseweb="menu"] li:hover {{
+    background-color: #2D6A9F !important;
+    color: #FFFFFF !important;
 }}
 
 label {{ color: #C9D8F0 !important; font-size: 14px !important; font-weight: 500; }}
@@ -115,14 +128,14 @@ div[data-testid="stExpander"] {{ background: rgba(13,27,42,0.45); border: 1px so
 """, unsafe_allow_html=True)
 
 st.title("📝 Trip Registration Form")
-st.markdown("*Fill in your details to officially join the Manali trip*")
+st.markdown("<p style='color:#C9D8F0; font-style:italic;'>Fill in your details to officially join the Manali trip</p>", unsafe_allow_html=True)
 
 st.markdown("""
-<div style="background:rgba(13,27,42,0.6);border:1px solid rgba(201,216,240,0.2);
-  border-radius:10px;padding:14px 18px;margin-bottom:24px;backdrop-filter: blur(4px);">
-  🏔️ Registration date &nbsp;|&nbsp;
+<div style="background:#15293E;border:1px solid rgba(201,216,240,0.2);
+  border-radius:10px;padding:14px 18px;margin-bottom:24px;color:#F0F4FF;">
+  <span style="color:#F0F4FF;">🏔️ Registration date &nbsp;|&nbsp;
   📅 1 july to 2 august &nbsp;|&nbsp;
-  manali trip 2026🏔️
+  manali trip 2026🏔️</span>
 </div>
 """, unsafe_allow_html=True)
 
