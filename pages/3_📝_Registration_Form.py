@@ -160,7 +160,7 @@ if st.session_state.registration_success:
     st.stop()
 
 # ── Form ──────────────────────────────────────────────────────────────────────
-with st.form("registration_form", clear_on_submit=True):
+with st.form("registration_form", clear_on_submit=False):
 
     st.markdown("#### 👤 Personal Details (Compulsory)")
     col1, col2 = st.columns(2)
