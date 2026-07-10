@@ -25,16 +25,16 @@ st.markdown("---")
 st.markdown("### 🗓️ Day Overview")
 
 data = [
-    ("Day 1",  "1 Oct (Thu)",  "🚆 Ranchi → Chandigarh",   "Train 18309 dep 5:10 PM from Ranchi Jn", "#1B3A5C"),
-    ("Day 2",  "2 Oct (Fri)",  "🚆 Onboard Train",          "Continuing journey towards Chandigarh", "#1B3A5C"),
-    ("Day 3",  "3 Oct (Sat)",  "🏔️ Chandigarh+Shimla",   "Arrive Chandigarh 2:53 AM · Private car onward to Shimla", "#1B4332"),
-    ("Day 4",  "4 Oct (Sun)",  "🎯 Shimla",                 "Sightseeing — Mall Road, Ridge, Jakhoo Temple", "#2D3A1A"),
-    ("Day 5",  "5 Oct (Mon)",  "🚗 Kasol",         "Drive to Kasol, evening at leisure by Parvati river", "#0369A1"),
-    ("Day 6",  "6 Oct (Tue)",  "🎯 Kasol",                  "Kasol village walk, café hopping, optional Chalal/Tosh trek", "#0369A1"),
-    ("Day 7",  "7 Oct (Wed)",  "🚗 Manali",         "Drive to Manali, hotel check-in, Mall Road evening", "#1A2D3A"),
-    ("Day 8",  "8 Oct (Thu)",  "🎯 Manali",                 "Local sightseeing / adventure activities", "#1A2D3A"),
-    ("Day 9",  "9 Oct (Fri)",  "🚗 shimla+Chandigarh",    "Private car departs Manali morning · Drops Chandigarh afternoon", "#92400E"),
-    ("Day 10", "10 Oct (Sat)", "🚆 Chandigarh → Ranchi",    "Train 18310 dep ~1:45 AM · Arrive Ranchi 8:15 AM", "#2A1A2A"),
+    ("Day 1",  "24 Sep (Thu)",  "🚆 Ranchi → Chandigarh",   "Train 18309 dep 5:10 PM from Ranchi Jn", "#1B3A5C"),
+    ("Day 2",  "25 Sep (Fri)",  "🚆 Onboard Train",         "Continuing journey towards Chandigarh", "#1B3A5C"),
+    ("Day 3",  "26 Sep (Sat)",  "🏔️ Chandigarh + Shimla",  "Arrive Chandigarh 2:53 AM · Private car onward to Shimla", "#1B4332"),
+    ("Day 4",  "27 Sep (Sun)",  "🎯 Shimla",                "Sightseeing — Mall Road, Ridge, Jakhoo Temple", "#2D3A1A"),
+    ("Day 5",  "28 Sep (Mon)",  "🚗 Kasol",                 "Drive to Kasol, evening at leisure by Parvati River", "#0369A1"),
+    ("Day 6",  "29 Sep (Tue)",  "🎯 Kasol",                 "Kasol village walk, café hopping, optional Chalal/Tosh trek", "#0369A1"),
+    ("Day 7",  "30 Sep (Wed)",  "🚗 Manali",                "Drive to Manali, hotel check-in, Mall Road evening", "#1A2D3A"),
+    ("Day 8",  "1 Oct (Thu)",   "🎯 Manali",                "Local sightseeing / adventure activities", "#1A2D3A"),
+    ("Day 9",  "2 Oct (Fri)",   "🚗 Manali → Chandigarh",   "Private car departs Manali morning · Drops Chandigarh afternoon", "#92400E"),
+    ("Day 10", "3 Oct (Sat)",   "🚆 Chandigarh → Ranchi",   "Train 18310 dep ~1:45 AM · Arrive Ranchi 8:15 AM", "#2A1A2A"),
 ]
 
 html_rows = ""
@@ -69,11 +69,11 @@ with t1:
 **🟢 Onward Journey (जाने का सफर)**
 | Leg | Mode | Details |
 |-----|------|---------|
-| Ranchi → Chandigarh | Train 18309 (SBP–JAT Express) | 1 Oct (Thu), dep 5:10 PM |
-| Chandigarh → Shimla → Kasol → Manali | Private Car (full trip booking) | 3 Oct onwards |
+| Ranchi → Chandigarh | Train 18309 (SBP–JAT Express) | 24 sep (Thu), dep 5:10 PM |
+| Chandigarh → Shimla → Kasol → Manali | Private Car (full trip booking) | 26 Sep onwards |
 
-✅ Train 18309 runs **Mon / Tue / Thu / Sat** — confirm 1 Oct run day on IRCTC before booking  
-✅ Arrives Chandigarh **2:53 AM (Sat, 3 Oct)** — ~33 hr 43 min journey  
+✅ Train 18309 runs **Mon / Tue / Thu / Sat** — confirm 24 Sep run day on IRCTC before booking  
+✅ Arrives Chandigarh **2:53 AM (Sat, 26 Sep)** — ~33 hr 43 min journey  
 ✅ Car covers Chandigarh ⇄ Shimla ⇄ Kasol ⇄ Manali ⇄ Chandigarh as one full package  
 """)
 
@@ -82,13 +82,13 @@ with t2:
 **🔴 Return Journey (वापसी का सफर)**
 | Leg | Mode | Details |
 |-----|------|---------|
-| Manali → Chandigarh | Private Car | 9 Oct, drop-off afternoon |
-| Chandigarh → Ranchi | Train 18310 (JAT–SBP Express) | 11 Oct, dep ~1:45 AM |
+| Manali → Chandigarh | Private Car | 2 Oct, drop-off afternoon |
+| Chandigarh → Ranchi | Train 18310 (JAT–SBP Express) | 3 Oct, dep ~1:45 AM |
 
-✅ Car drops you in Chandigarh by afternoon on 9 Oct  
-✅ Train 18310 runs **Mon / Wed / Fri / Sat** — confirm exact 10/11 Oct night run on IRCTC  
-✅ Extra free day in Chandigarh (9–10 Oct) before boarding the late-night train  
-✅ Arrives Ranchi **8:15 AM (Sun, 11 Oct)**  
+✅ Car drops you in Chandigarh by afternoon on 2 Oct  
+✅ Train 18310 runs **Mon / Wed / Fri / Sat** — confirm exact 2/3 Oct night run on IRCTC  
+✅ Free evening in Chandigarh (2 Oct) before boarding the early-morning train (3 Oct, 1:45 AM)  
+✅ Arrives Ranchi **8:15 AM (Sat, 3 Oct)**  
 """)
 
 st.markdown("---")
@@ -101,8 +101,8 @@ with tr1:
     st.markdown("""
 **18309 — SBP–JAT Express (Sambalpur–Jammu Tawi)**  
 🛤️ Ranchi (RNC) → Chandigarh (CDG)  
-📅 1 Oct 2026 (Thursday)  
-⏰ Dep: 5:10 PM &nbsp;&nbsp; Arr: 3 Oct 2:53 AM  
+📅 24 sep 2026 (Thursday)  
+⏰ Dep: 5:10 PM &nbsp;&nbsp; Arr: 26 Sep 2:53 AM  
 ⏱️ Journey: ~33 hrs 43 min  
 🗓️ Runs on: Mon, Tue, Thu, Sat  
 💺 Class: Sleeper/3AC &nbsp;&nbsp; 💰 To be confirmed on IRCTC  
@@ -112,7 +112,7 @@ with tr2:
     st.markdown("""
 **18310 — JAT–SBP Express (Jammu Tawi–Sambalpur)**  
 🛤️ Chandigarh (CDG) → Ranchi (RNC)  
-📅 Dep night of 10 Oct / early 11 Oct 2026  
+📅 Dep night of 2 Oct / early 3 Oct 2026  
 ⏰ Dep: ~1:45 AM &nbsp;&nbsp; Arr: 8:15 AM (same day)  
 ⏱️ Journey: ~6.5 hrs *(verify — confirm full schedule on IRCTC)*  
 🗓️ Runs on: Mon, Wed, Fri, Sat  
@@ -133,9 +133,9 @@ st.markdown("""
 
 | Detail | Info |
 |--------|------|
-| Pickup | Chandigarh, 3 Oct ~3:00 AM (on train arrival) |
-| Drop-off | Chandigarh, 9 Oct afternoon |
-| Duration | 6 days / 5 nights on road + local use at each stop |
+| Pickup | Chandigarh, 26 Sep ~3:00 AM (on train arrival) |
+| Drop-off | Chandigarh, 2 Oct afternoon |
+| Duration | 7 days / 6 nights on road + local use at each stop |
 | Usage | Chandigarh–Shimla, Shimla–Kasol, Kasol–Manali transfers + local sightseeing at each stop + Manali–Chandigarh return |
 | Vehicle suggestion | Innova / Innova Crysta or similar (for hill roads + group + luggage) |
 
@@ -152,13 +152,13 @@ st.markdown("### 🏨 Accommodation Summary")
 st.markdown("""
 | Night | Location | Type |
 |-------|----------|------|
-| 1 Oct | Train (18309) | Sleeper berth |
-| 2 Oct | Train (18309) | Sleeper berth |
-| 3 Oct – 4 Oct | Shimla | Hotel (2 nights) |
-| 5 Oct – 6 Oct | Kasol | Hotel / Guesthouse (2 nights) |
-| 7 Oct – 8 Oct | Manali (Mall Road area) | Hotel (2 nights) |
-| 9 Oct – 10 Oct | Chandigarh | Hotel (1 night, extra free day) |
-| 10–11 Oct | Train (18310) | Sleeper berth |
+| 24 Sep | Train (18309) | Sleeper berth |
+| 25 Sep | Train (18309) | Sleeper berth |
+| 26 Sep – 27 Sep | Shimla | Hotel (2 nights) |
+| 28 Sep – 29 Sep | Kasol | Hotel / Guesthouse (2 nights) |
+| 30 Sep – 1 Oct | Manali (Mall Road area) | Hotel (2 nights) |
+| 2 Oct | Chandigarh | Hotel (1 night) |
+| 2 Oct – 3 Oct | Train (18310) | Sleeper berth |
 """)
 
 st.info("🏨 **Hotel Tip:** Shimla — Mall Road के पास; Kasol — Parvati river-side guesthouse; Manali — Mall Road के पास। Budget: ₹800–1500/room/night in October.")
