@@ -164,7 +164,7 @@ box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 
 
 # ── Hero Banner ───────────────────────────────────────────────────────────────
-_hero_b64 = img_to_base64("images/poster.png")
+_hero_b64 = img_to_base64("images/poster.jpg")
 _hero_style = (
     f"background-image: url('data:image/png;base64,{_hero_b64}'); background-size: 100% 100%; background-repeat: no-repeat;"
     if _hero_b64
